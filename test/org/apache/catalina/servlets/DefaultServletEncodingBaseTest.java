@@ -62,10 +62,10 @@ public abstract class DefaultServletEncodingBaseTest extends TomcatBaseTest {
     public static Collection<Object[]> parameters() {
 
         String[] encodings = new String[] {
-                "utf-8", "ibm850", "cp1252", "iso-8859-1" };
+                "utf-8", "ibm850", "cp1252", "UTF-8" };
 
         String[] targetFiles = new String[] {
-                "cp1252", "ibm850", "iso-8859-1", "utf-8-bom", "utf-8" };
+                "cp1252", "ibm850", "UTF-8", "utf-8-bom", "utf-8" };
 
         Boolean[] booleans = new Boolean[] { Boolean.FALSE, Boolean.TRUE };
 
@@ -122,20 +122,20 @@ public abstract class DefaultServletEncodingBaseTest extends TomcatBaseTest {
              */
             if (targetFile.endsWith("-bom") && useBom ||
                     targetFile.startsWith(fileEncoding) ||
-                    targetFile.equals("cp1252") && fileEncoding.equals("iso-8859-1") ||
-                    targetFile.equals("iso-8859-1") && fileEncoding.equals("cp1252")) {
+                    targetFile.equals("cp1252") && fileEncoding.equals("UTF-8") ||
+                    targetFile.equals("UTF-8") && fileEncoding.equals("cp1252")) {
                 return true;
             } else {
                 return false;
             }
         } else if (!(targetFile.startsWith(outputEncoding) ||
-                targetFile.equals("cp1252") && outputEncoding.equals("iso-8859-1") ||
-                targetFile.equals("iso-8859-1") && outputEncoding.equals("cp1252"))) {
+                targetFile.equals("cp1252") && outputEncoding.equals("UTF-8") ||
+                targetFile.equals("UTF-8") && outputEncoding.equals("cp1252"))) {
             /*
              * The non-writer use cases read the target file as bytes. These
              * cases therefore reduce to can the bytes from the target file be
              * included in the output without corruption? The character used in
-             * the tests has been chosen so that, apart from iso-8859-1 and
+             * the tests has been chosen so that, apart from UTF-8 and
              * cp1252, the bytes vary by character set.
              * (Assuming any BOM is always skipped in the included output.)
              */

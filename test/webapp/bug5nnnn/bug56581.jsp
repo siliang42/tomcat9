@@ -14,7 +14,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 
---%><%@page contentType="text/plain;charset=ISO-8859-1"
+--%><%@page contentType="text/plain;charset=UTF-8"
 %><% for (int i=0; i<1000; i++) {
   out.print(i);
   out.print(" Hello world!\n");

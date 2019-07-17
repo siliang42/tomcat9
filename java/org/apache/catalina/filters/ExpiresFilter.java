@@ -1268,7 +1268,7 @@ public class ExpiresFilter extends FilterBase {
         }
 
         // lookup exact content-type match (e.g.
-        // "text/html; charset=iso-8859-1")
+        // "text/html; charset=UTF-8")
         ExpiresConfiguration configuration = expiresConfigurationByContentType.get(contentType);
         if (configuration != null) {
             Date result = getExpirationDate(configuration, response);

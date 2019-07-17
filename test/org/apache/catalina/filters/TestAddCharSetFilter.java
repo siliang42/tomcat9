@@ -43,7 +43,7 @@ public class TestAddCharSetFilter extends TomcatBaseTest {
 
     @Test
     public void testNoneSpecifiedMode1() throws Exception {
-        doTest(null, "ISO-8859-1");
+        doTest(null, "UTF-8");
     }
 
     @Test
@@ -58,12 +58,12 @@ public class TestAddCharSetFilter extends TomcatBaseTest {
 
     @Test
     public void testDefault() throws Exception {
-        doTest("default", "ISO-8859-1");
+        doTest("default", "UTF-8");
     }
 
     @Test
     public void testDefaultMixedCase() throws Exception {
-        doTest("dEfAuLt", "ISO-8859-1");
+        doTest("dEfAuLt", "UTF-8");
     }
 
     @Test

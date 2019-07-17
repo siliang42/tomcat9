@@ -54,7 +54,7 @@ public class TestCookieProcessorGenerationHttp extends TomcatBaseTest {
         List<String> cookieHeaders = headers.get("Set-Cookie");
         Assert.assertEquals("There should only be one Set-Cookie header in this test",
                 1, cookieHeaders.size());
-        // Client is assuming header is ISO-8859-1 encoding which it isn't. Turn
+        // Client is assuming header is UTF-8 encoding which it isn't. Turn
         // the header value back into the received bytes (this isn't guaranteed
         // to work with all values but it will for this test value)
         byte[] headerBytes = cookieHeaders.get(0).getBytes(StandardCharsets.ISO_8859_1);

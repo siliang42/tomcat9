@@ -75,7 +75,7 @@ public class TesterParametersPerformance {
 
     @Test
     public void testCreateString() throws UnsupportedEncodingException {
-        B2CConverter.getCharset("ISO-8859-1");
+        B2CConverter.getCharset("UTF-8");
         doCreateStringMultiple("foo");
     }
 

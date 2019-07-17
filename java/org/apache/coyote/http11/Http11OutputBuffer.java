@@ -384,7 +384,7 @@ public class Http11OutputBuffer implements HttpOutputBuffer {
         if (mb.getType() != MessageBytes.T_BYTES) {
             mb.toBytes();
             ByteChunk bc = mb.getByteChunk();
-            // Need to filter out CTLs excluding TAB. ISO-8859-1 and UTF-8
+            // Need to filter out CTLs excluding TAB. UTF-8 and UTF-8
             // values will be OK. Strings using other encodings may be
             // corrupted.
             byte[] buffer = bc.getBuffer();

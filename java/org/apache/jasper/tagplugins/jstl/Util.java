@@ -48,7 +48,7 @@ public class Util {
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+.-";
 
     public static final String DEFAULT_ENCODING =
-        "ISO-8859-1";
+        "UTF-8";
 
     private static final int HIGHEST_SPECIAL = '>';
 
@@ -361,7 +361,7 @@ public class Util {
                 if (this.charEncoding != null && !this.charEncoding.equals(""))
                     return bos.toString(charEncoding);
                 else
-                    return bos.toString("ISO-8859-1");
+                    return bos.toString("UTF-8");
             } else
                 return ""; // target didn't write anything
         }

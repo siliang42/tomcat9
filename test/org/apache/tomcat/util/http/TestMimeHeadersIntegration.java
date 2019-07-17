@@ -49,7 +49,7 @@ public class TestMimeHeadersIntegration extends TomcatBaseTest {
             @Override
             public void service(ServletRequest req, ServletResponse res)
                     throws ServletException, IOException {
-                res.setContentType("text/plain; charset=ISO-8859-1");
+                res.setContentType("text/plain; charset=UTF-8");
                 res.getWriter().write("OK");
             }
         });

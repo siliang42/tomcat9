@@ -46,7 +46,7 @@ public class StaticMember extends MemberImpl {
 
     /**
      * @param domain String, either in byte array string format, like {214,116,1,3}
-     * or as a regular string value like 'mydomain'. The latter will be converted using ISO-8859-1 encoding
+     * or as a regular string value like 'mydomain'. The latter will be converted using UTF-8 encoding
      */
     public void setDomain(String domain) {
         if ( domain == null ) return;

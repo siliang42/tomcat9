@@ -49,7 +49,7 @@ public class TLSClientHelloExtractor {
     private static final int TLS_EXTENSION_ALPN = 16;
 
     public static byte[] USE_TLS_RESPONSE = ("HTTP/1.1 400 \r\n" +
-            "Content-Type: text/plain;charset=ISO-8859-1\r\n" +
+            "Content-Type: text/plain;charset=UTF-8\r\n" +
             "Connection: close\r\n" +
             "\r\n" +
             "Bad Request\r\n" +

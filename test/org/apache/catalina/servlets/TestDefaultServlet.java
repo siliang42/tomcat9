@@ -107,7 +107,7 @@ public class TestDefaultServlet extends TomcatBaseTest {
         Wrapper defaultServlet = Tomcat.addServlet(ctxt, "default",
                 "org.apache.catalina.servlets.DefaultServlet");
         defaultServlet.addInitParameter("gzip", "true");
-        defaultServlet.addInitParameter("fileEncoding", "ISO-8859-1");
+        defaultServlet.addInitParameter("fileEncoding", "UTF-8");
         ctxt.addServletMappingDecoded("/", "default");
 
         ctxt.addMimeMapping("html", "text/html");
@@ -163,7 +163,7 @@ public class TestDefaultServlet extends TomcatBaseTest {
         Wrapper defaultServlet = Tomcat.addServlet(ctxt, "default",
                 "org.apache.catalina.servlets.DefaultServlet");
         defaultServlet.addInitParameter("precompressed", "true");
-        defaultServlet.addInitParameter("fileEncoding", "ISO-8859-1");
+        defaultServlet.addInitParameter("fileEncoding", "UTF-8");
 
         ctxt.addServletMappingDecoded("/", "default");
         ctxt.addMimeMapping("html", "text/html");
@@ -274,7 +274,7 @@ public class TestDefaultServlet extends TomcatBaseTest {
         Wrapper defaultServlet = Tomcat.addServlet(ctxt, "default",
                 DefaultServlet.class.getName());
         defaultServlet.addInitParameter("precompressed", "br=.br,gzip=.gz");
-        defaultServlet.addInitParameter("fileEncoding", "ISO-8859-1");
+        defaultServlet.addInitParameter("fileEncoding", "UTF-8");
 
         ctxt.addServletMappingDecoded("/", "default");
         ctxt.addMimeMapping("html", "text/html");
@@ -454,7 +454,7 @@ public class TestDefaultServlet extends TomcatBaseTest {
         Context ctxt = tomcat.addContext("", appDir.getAbsolutePath());
         Wrapper defaultServlet = Tomcat.addServlet(ctxt, "default",
                 DefaultServlet.class.getName());
-        defaultServlet.addInitParameter("fileEncoding", "ISO-8859-1");
+        defaultServlet.addInitParameter("fileEncoding", "UTF-8");
 
         ctxt.addServletMappingDecoded("/", "default");
         ctxt.addMimeMapping("html", "text/html");

@@ -151,7 +151,7 @@
            source="${compile.source}"
            target="${compile.target}"
            release="${compile.release}"
-           encoding="ISO-8859-1"
+           encoding="UTF-8"
            includeantruntime="false">
       <classpath refid="tomcat.jdbc.classpath"/>
       <include name="org/apache/tomcat/jdbc/**" />
@@ -188,7 +188,7 @@
            source="${compile.source}"
            target="${compile.target}"
            release="${compile.release}"
-           encoding="ISO-8859-1"
+           encoding="UTF-8"
            includeantruntime="false">
       <classpath refid="tomcat.jdbc.classpath"/>
       <classpath refid="test.classpath"/>

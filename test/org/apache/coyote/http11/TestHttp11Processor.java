@@ -900,9 +900,9 @@ public class TestHttp11Processor extends TomcatBaseTest {
         socket.setSoTimeout(300000);
         socket.connect(addr,300000);
         OutputStream os = socket.getOutputStream();
-        Writer writer = new OutputStreamWriter(os, "ISO-8859-1");
+        Writer writer = new OutputStreamWriter(os, "UTF-8");
         InputStream is = socket.getInputStream();
-        Reader r = new InputStreamReader(is, "ISO-8859-1");
+        Reader r = new InputStreamReader(is, "UTF-8");
         BufferedReader reader = new BufferedReader(r);
 
         // Write the headers

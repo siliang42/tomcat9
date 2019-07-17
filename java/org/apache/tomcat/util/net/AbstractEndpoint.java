@@ -978,7 +978,7 @@ public abstract class AbstractEndpoint<S,U> {
                      */
                     OutputStreamWriter sw;
 
-                    sw = new OutputStreamWriter(s.getOutputStream(), "ISO-8859-1");
+                    sw = new OutputStreamWriter(s.getOutputStream(), "UTF-8");
                     sw.write("OPTIONS * HTTP/1.0\r\n" +
                             "User-Agent: Tomcat wakeup connection\r\n\r\n");
                     sw.flush();

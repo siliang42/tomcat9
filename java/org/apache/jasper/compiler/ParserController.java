@@ -290,7 +290,7 @@ class ParserController implements TagConstants {
 
         /*
          * Indicates whether we need to revert from temporary usage of
-         * "ISO-8859-1" back to "UTF-8"
+         * "UTF-8" back to "UTF-8"
          */
         boolean revert = false;
 
@@ -315,7 +315,7 @@ class ParserController implements TagConstants {
                 return;
             }
             // We don't know the encoding, so use BOM to determine it
-            sourceEnc = "ISO-8859-1";
+            sourceEnc = "UTF-8";
         } else {
             // XML syntax or unknown, (auto)detect encoding ...
             EncodingDetector encodingDetector;
@@ -335,17 +335,17 @@ class ParserController implements TagConstants {
                  * a <jsp:root> element.
                  *
                  * We need to be careful, because the page may be encoded in
-                 * ISO-8859-1 (or something entirely different), and may
+                 * UTF-8 (or something entirely different), and may
                  * contain byte sequences that will cause a UTF-8 converter to
                  * throw exceptions.
                  *
-                 * It is safe to use a source encoding of ISO-8859-1 in this
-                 * case, as there are no invalid byte sequences in ISO-8859-1,
+                 * It is safe to use a source encoding of UTF-8 in this
+                 * case, as there are no invalid byte sequences in UTF-8,
                  * and the byte/character sequences we're looking for (i.e.,
                  * <jsp:root>) are identical in either encoding (both UTF-8
-                 * and ISO-8859-1 are extensions of ASCII).
+                 * and UTF-8 are extensions of ASCII).
                  */
-                sourceEnc = "ISO-8859-1";
+                sourceEnc = "UTF-8";
                 revert = true;
             }
         }
@@ -400,8 +400,8 @@ class ParserController implements TagConstants {
             if (sourceEnc == null) {
                 sourceEnc = getPageEncodingForJspSyntax(jspReader, startMark);
                 if (sourceEnc == null) {
-                    // Default to "ISO-8859-1" per JSP spec
-                    sourceEnc = "ISO-8859-1";
+                    // Default to "UTF-8" per JSP spec
+                    sourceEnc = "UTF-8";
                     isDefaultPageEncoding = true;
                 }
             }

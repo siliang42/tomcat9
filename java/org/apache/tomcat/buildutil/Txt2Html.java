@@ -57,7 +57,7 @@ public class Txt2Html
      * The encoding of the source files (.java and .jsp).  Once they use
      * UTF-8, this will need to be updated.
      */
-    private static final String SOURCE_ENCODING = "ISO-8859-1";
+    private static final String SOURCE_ENCODING = "UTF-8";
 
     /**
      * Line terminator to be used for separating lines of the generated

@@ -41,7 +41,7 @@ import java.util.Locale;
  * <li>per web application via the deployment descriptor or
  *     {@link ServletContext#setRequestCharacterEncoding(String)}</li>
  * <li>container default via vendor specific configuration</li>
- * <li>ISO-8859-1</li>
+ * <li>UTF-8</li>
  * </ol>
  * The <code>setCharacterEncoding</code>, <code>setContentType</code>, or
  * <code>setLocale</code> method must be called before <code>getWriter</code>
@@ -67,12 +67,12 @@ public interface ServletResponse {
      * <li>per web application via the deployment descriptor or
      *     {@link ServletContext#setRequestCharacterEncoding(String)}</li>
      * <li>container default via vendor specific configuration</li>
-     * <li>ISO-8859-1</li>
+     * <li>UTF-8</li>
      * </ol>
      * Calls made to {@link #setCharacterEncoding}, {@link #setContentType} or
      * {@link #setLocale} after <code>getWriter</code> has been called or after
      * the response has been committed have no effect on the character encoding.
-     * If no character encoding has been specified, <code>ISO-8859-1</code> is
+     * If no character encoding has been specified, <code>UTF-8</code> is
      * returned.
      * <p>
      * See RFC 2047 (http://www.ietf.org/rfc/rfc2047.txt) for more information
@@ -123,8 +123,8 @@ public interface ServletResponse {
      * returned by {@link #getCharacterEncoding}. If the response's character
      * encoding has not been specified as described in
      * <code>getCharacterEncoding</code> (i.e., the method just returns the
-     * default value <code>ISO-8859-1</code>), <code>getWriter</code> updates it
-     * to <code>ISO-8859-1</code>.
+     * default value <code>UTF-8</code>), <code>getWriter</code> updates it
+     * to <code>UTF-8</code>.
      * <p>
      * Calling flush() on the <code>PrintWriter</code> commits the response.
      * <p>

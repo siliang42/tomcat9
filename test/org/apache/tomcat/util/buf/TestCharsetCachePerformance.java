@@ -47,7 +47,7 @@ public class TestCharsetCachePerformance {
         int threadCount = 10;
         int iterations = 10000000;
         String[] lookupNames = new String[] {
-                "ISO-8859-1", "ISO-8859-2", "ISO-8859-3", "ISO-8859-4", "ISO-8859-5" };
+                "UTF-8", "ISO-8859-2", "ISO-8859-3", "ISO-8859-4", "ISO-8859-5" };
 
         Thread[] threads = new Thread[threadCount];
 

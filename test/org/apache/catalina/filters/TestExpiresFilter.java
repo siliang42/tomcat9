@@ -303,7 +303,7 @@ public class TestExpiresFilter extends TomcatBaseTest {
             protected void service(HttpServletRequest request,
                     HttpServletResponse response) throws ServletException,
                     IOException {
-                response.setContentType("text/xml; charset=iso-8859-1");
+                response.setContentType("text/xml; charset=UTF-8");
                 response.getWriter().print("Hello world");
             }
         };
@@ -356,7 +356,7 @@ public class TestExpiresFilter extends TomcatBaseTest {
             protected void service(HttpServletRequest request,
                     HttpServletResponse response) throws ServletException,
                     IOException {
-                response.setContentType("text/json; charset=iso-8859-1");
+                response.setContentType("text/json; charset=UTF-8");
                 response.getWriter().print("Hello world");
             }
         };

@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentMap;
 public class CharsetCache {
 
     /* Note: Package private to enable testing without reflection */
-    static final String[] INITIAL_CHARSETS = new String[] { "iso-8859-1", "utf-8" };
+    static final String[] INITIAL_CHARSETS = new String[] { "UTF-8", "utf-8" };
 
     /*
      *  Note: Package private to enable testing without reflection
@@ -98,7 +98,7 @@ public class CharsetCache {
             "ibm922", "ibm923", "ibm930", "ibm933", "ibm935", "ibm937", "ibm939", "ibm942", "ibm942c", "ibm943",
             "ibm943c", "ibm948", "ibm949", "ibm949c", "ibm950", "ibm964", "ibm970", "iscii", "iscii91",
             "iso-10646-ucs-2", "iso-2022-cn", "iso-2022-cn-cns", "iso-2022-cn-gb", "iso-2022-jp", "iso-2022-jp-2",
-            "iso-2022-kr", "iso-8859-11", "iso-8859-13", "iso-8859-15", "iso-8859-15", "iso-8859-2", "iso-8859-3",
+            "iso-2022-kr", "UTF-81", "UTF-83", "UTF-85", "UTF-85", "iso-8859-2", "iso-8859-3",
             "iso-8859-4", "iso-8859-5", "iso-8859-6", "iso-8859-7", "iso-8859-8", "iso-8859-9", "iso-ir-101",
             "iso-ir-109", "iso-ir-110", "iso-ir-126", "iso-ir-127", "iso-ir-138", "iso-ir-144", "iso-ir-148",
             "iso-ir-153", "iso-ir-159", "iso-ir-6", "iso-ir-87", "iso2022cn", "iso2022cn_cns", "iso2022cn_gb",
@@ -130,7 +130,7 @@ public class CharsetCache {
             "x-ibm737", "x-ibm833", "x-ibm834", "x-ibm856", "x-ibm874", "x-ibm875", "x-ibm921", "x-ibm922", "x-ibm930",
             "x-ibm933", "x-ibm935", "x-ibm937", "x-ibm939", "x-ibm942", "x-ibm942c", "x-ibm943", "x-ibm943c",
             "x-ibm948", "x-ibm949", "x-ibm949c", "x-ibm950", "x-ibm964", "x-ibm970", "x-iscii91", "x-iso-2022-cn-cns",
-            "x-iso-2022-cn-gb", "x-iso-8859-11", "x-jis0208", "x-jisautodetect", "x-johab", "x-macarabic",
+            "x-iso-2022-cn-gb", "x-UTF-81", "x-jis0208", "x-jisautodetect", "x-johab", "x-macarabic",
             "x-maccentraleurope", "x-maccroatian", "x-maccyrillic", "x-macdingbat", "x-macgreek", "x-machebrew",
             "x-maciceland", "x-macroman", "x-macromania", "x-macsymbol", "x-macthai", "x-macturkish", "x-macukraine",
             "x-ms932_0213", "x-ms950-hkscs", "x-ms950-hkscs-xp", "x-mswin-936", "x-pck", "x-sjis", "x-sjis_0213",
@@ -138,7 +138,7 @@ public class CharsetCache {
             "x-utf-32le-bom", "x-windows-50220", "x-windows-50221", "x-windows-874", "x-windows-949", "x-windows-950",
             "x-windows-iso2022jp", "x0201", "x0208", "x0212", "x11-compound_text",
             // Added from Oracle JDK 10.0.2
-            "csiso885915", "csiso885916", "iso-8859-16", "iso-ir-226", "iso_8859-16", "iso_8859-16:2001", "l10",
+            "csiso885915", "csiso885916", "UTF-86", "iso-ir-226", "iso_8859-16", "iso_8859-16:2001", "l10",
             "latin-9", "latin10", "ms932-0213", "ms932:2004", "ms932_0213", "shift_jis:2004", "shift_jis_0213:2004",
             "sjis-0213", "sjis:2004", "sjis_0213", "sjis_0213:2004", "windows-932-0213", "windows-932:2004",
             // Added from OpenJDK 11.0.1

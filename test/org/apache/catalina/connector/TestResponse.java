@@ -127,9 +127,9 @@ public class TestResponse extends TomcatBaseTest {
             PrintWriter pw = resp.getWriter();
             resp.setHeader("Content-Type", "text/plain;charset=UTF-8");
 
-            // Should be ISO-8859-1 because getWriter() was called before
+            // Should be UTF-8 because getWriter() was called before
             // setHeader()
-            if (resp.getCharacterEncoding().equals("ISO-8859-1")) {
+            if (resp.getCharacterEncoding().equals("UTF-8")) {
                 pw.print("OK");
             } else {
                 pw.print("FAIL: " + resp.getCharacterEncoding());
@@ -648,10 +648,10 @@ public class TestResponse extends TomcatBaseTest {
                     "Start=\"<31671603.smil>\";" +
                     "Type=\"application/smil;charset=UTF-8\"");
 
-            // Should be ISO-8859-1 because the charset in the above is part
+            // Should be UTF-8 because the charset in the above is part
             // of the Type parameter
             PrintWriter pw = resp.getWriter();
-            if (resp.getCharacterEncoding().equals("ISO-8859-1")) {
+            if (resp.getCharacterEncoding().equals("UTF-8")) {
                 pw.print("OK");
             } else {
                 pw.print("FAIL: " + resp.getCharacterEncoding());

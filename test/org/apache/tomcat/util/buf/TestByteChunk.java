@@ -41,7 +41,7 @@ public class TestByteChunk {
     public void testConvertToBytes() throws UnsupportedEncodingException {
         String string = "HTTP/1.1 100 \r\n\r\n";
         byte[] bytes = ByteChunk.convertToBytes(string);
-        byte[] expected = string.getBytes("ISO-8859-1");
+        byte[] expected = string.getBytes("UTF-8");
         Assert.assertTrue(Arrays.equals(bytes, expected));
     }
 
@@ -53,12 +53,12 @@ public class TestByteChunk {
      * As discussed in the "Re: r944918" thread on dev@, {@code
      * ByteChunk.indexOf()} works for 0-127 ASCII chars only, and cannot find
      * any chars outside of the range. {@code ByteChunk.findByte()} works for
-     * any ISO-8859-1 chars.
+     * any UTF-8 chars.
      */
     @Test
     public void testFindByte() throws UnsupportedEncodingException {
         // 0xa0 = 160 = &nbsp; character
-        byte[] bytes = "Hello\u00a0world".getBytes("ISO-8859-1");
+        byte[] bytes = "Hello\u00a0world".getBytes("UTF-8");
         final int len = bytes.length;
 
         // indexOf() does not work outside of 0-127
@@ -84,7 +84,7 @@ public class TestByteChunk {
 
     @Test
     public void testIndexOf_Char() throws UnsupportedEncodingException {
-        byte[] bytes = "Hello\u00a0world".getBytes("ISO-8859-1");
+        byte[] bytes = "Hello\u00a0world".getBytes("UTF-8");
         final int len = bytes.length;
 
         ByteChunk bc = new ByteChunk();
@@ -107,7 +107,7 @@ public class TestByteChunk {
 
     @Test
     public void testIndexOf_String() throws UnsupportedEncodingException {
-        byte[] bytes = "Hello\u00a0world".getBytes("ISO-8859-1");
+        byte[] bytes = "Hello\u00a0world".getBytes("UTF-8");
         final int len = bytes.length;
 
         ByteChunk bc = new ByteChunk();
@@ -133,7 +133,7 @@ public class TestByteChunk {
 
     @Test
     public void testFindBytes() throws UnsupportedEncodingException {
-        byte[] bytes = "Hello\u00a0world".getBytes("ISO-8859-1");
+        byte[] bytes = "Hello\u00a0world".getBytes("UTF-8");
         final int len = bytes.length;
 
         Assert.assertEquals(0, ByteChunk.findBytes(bytes, 0, len, new byte[] { 'H' }));

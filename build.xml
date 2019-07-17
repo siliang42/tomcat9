@@ -625,7 +625,7 @@
            source="${compile.source}"
            target="${compile.target}"
            release="${compile.release}"
-           encoding="ISO-8859-1"
+           encoding="UTF-8"
            includeAntRuntime="true" >
       <!-- Uncomment this to show unchecked warnings:
       <compilerarg value="-Xlint:unchecked"/>
@@ -660,7 +660,7 @@
   <target name="compile-prepare">
     <!-- Add the builtin catalina.properties -->
     <copy todir="java/org/apache/catalina/startup"
-          file="conf/catalina.properties" encoding="ISO-8859-1">
+          file="conf/catalina.properties" encoding="UTF-8">
       <filterset refid="version.filters"/>
     </copy>
     <!-- Copy jdbc-pool documentation -->
@@ -680,7 +680,7 @@
            source="${compile.source}"
            target="${compile.target}"
            release="${compile.release}"
-           encoding="ISO-8859-1"
+           encoding="UTF-8"
            includeAntRuntime="true" >
       <!-- Uncomment this to show unchecked warnings:
       <compilerarg value="-Xlint:unchecked"/>
@@ -688,7 +688,7 @@
       <classpath refid="compile.classpath" />
     </javac>
     <!-- Copy static resource files -->
-    <copy todir="${tomcat.classes}" encoding="ISO-8859-1">
+    <copy todir="${tomcat.classes}" encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir="java">
         <include name="**/*.properties"/>
@@ -722,7 +722,7 @@
 
     <mkdir dir="${tomcat.manifests}" />
     <copy todir="${tomcat.manifests}" overwrite="yes" filtering="yes"
-      encoding="ISO-8859-1">
+      encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir="${tomcat.home}/res/META-INF" />
     </copy>
@@ -734,7 +734,7 @@
 
     <mkdir dir="${tomcat.bnd}" />
     <copy todir="${tomcat.bnd}" overwrite="yes" filtering="yes"
-          encoding="ISO-8859-1">
+          encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir="${tomcat.home}/res/bnd" />
     </copy>
@@ -996,14 +996,14 @@
         <include name="docs/**/*.html"/>
       </fileset>
     </copy>
-    <copy todir="${tomcat.build}/webapps/docs" encoding="ISO-8859-1">
+    <copy todir="${tomcat.build}/webapps/docs" encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir=".">
         <include name="BUILDING.txt"/>
         <include name="RUNNING.txt"/>
       </fileset>
     </copy>
-    <copy tofile="${tomcat.build}/webapps/docs/RELEASE-NOTES.txt" file="RELEASE-NOTES" encoding="ISO-8859-1">
+    <copy tofile="${tomcat.build}/webapps/docs/RELEASE-NOTES.txt" file="RELEASE-NOTES" encoding="UTF-8">
       <filterset refid="version.filters"/>
     </copy>
     <copy tofile="${tomcat.build}/webapps/docs/mbeans-descriptors.dtd"
@@ -1133,7 +1133,7 @@
          <exclude name="**/*.bat"/>
       </fileset>
     </copy>
-    <copy todir="${tomcat.build}/bin" encoding="ISO-8859-1">
+    <copy todir="${tomcat.build}/bin" encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir="bin">
          <include name="**/*.sh"/>
@@ -1144,7 +1144,7 @@
     <chmod dir="${tomcat.build}/bin" includes="*.sh" perm="+x"/>
 
     <!-- Copy static resource files -->
-    <copy todir="${tomcat.build}/conf" encoding="ISO-8859-1">
+    <copy todir="${tomcat.build}/conf" encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir="conf">
         <include name="**/*.policy"/>
@@ -1171,7 +1171,7 @@
       </fileset>
     </copy>
 
-    <copy tofile="${tomcat.build}/webapps/ROOT/RELEASE-NOTES.txt" file="RELEASE-NOTES" encoding="ISO-8859-1">
+    <copy tofile="${tomcat.build}/webapps/ROOT/RELEASE-NOTES.txt" file="RELEASE-NOTES" encoding="UTF-8">
       <filterset refid="version.filters"/>
     </copy>
 
@@ -1201,7 +1201,7 @@
              target="${compile.target}"
              release="${compile.release}"
              classpath="${tomcat.classes}"
-             encoding="ISO-8859-1"
+             encoding="UTF-8"
              includeantruntime="false">
     </javac>
 
@@ -1213,7 +1213,7 @@
              target="${compile.target}"
              release="${compile.release}"
              classpath="${tomcat.classes}"
-             encoding="ISO-8859-1"
+             encoding="UTF-8"
              includeantruntime="false">
     </javac>
 
@@ -1408,7 +1408,7 @@
           depends="embed-jars,embed-sources" >
 
     <fixcrlf srcdir="${tomcat.embed}" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
     <zip destfile="${tomcat.embed}/${final.name}-embed.zip">
@@ -1423,7 +1423,7 @@
     <hashAndSign file="${tomcat.embed}/${final.name}-embed.zip" />
 
     <fixcrlf srcdir="${tomcat.embed}" eol="lf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
     <tar longfile="gnu" compression="gzip"
@@ -1449,7 +1449,7 @@
            source="${compile.source}"
            target="${compile.target}"
            release="${compile.release}"
-           encoding="ISO-8859-1"
+           encoding="UTF-8"
            includeantruntime="true">
       <classpath refid="tomcat.test.classpath" />
       <include name="org/apache/**" />
@@ -1768,7 +1768,7 @@
   <target name="dist-static" depends="dist-prepare, deploy, embed">
 
     <!-- Copy the top-level documentation files -->
-    <copy todir="${tomcat.dist}" encoding="ISO-8859-1">
+    <copy todir="${tomcat.dist}" encoding="UTF-8">
       <filterset refid="version.filters"/>
       <fileset dir=".">
         <include name="LICENSE"/>
@@ -1804,8 +1804,8 @@
     <touch file="${tomcat.dist}/temp/safeToDelete.tmp" />
 
     <!-- Correct permissions and line endings on "bin" scripts -->
-    <fixcrlf srcdir="${tomcat.dist}/bin" includes="*.sh"  eol="lf"   encoding="ISO-8859-1" fixlast="false" />
-    <fixcrlf srcdir="${tomcat.dist}/bin" includes="*.bat" eol="crlf" encoding="ISO-8859-1" fixlast="false" />
+    <fixcrlf srcdir="${tomcat.dist}/bin" includes="*.sh"  eol="lf"   encoding="UTF-8" fixlast="false" />
+    <fixcrlf srcdir="${tomcat.dist}/bin" includes="*.bat" eol="crlf" encoding="UTF-8" fixlast="false" />
     <chmod      dir="${tomcat.dist}/bin" includes="*.sh"  perm="+x"/>
 
     <!-- Windows binaries -->
@@ -2115,11 +2115,11 @@ skip.installer property in build.properties" />
     <copy file="${nsis.nsisdl.dll}" todir="${tomcat.dist}" />
     <copy file="${nsis.system.dll}" todir="${tomcat.dist}" />
     <copy file="${nsis.nsdialogs.dll}" todir="${tomcat.dist}" />
-    <copy file="res/tomcat.nsi" tofile="${tomcat.dist}/tomcat.nsi" overwrite="true" encoding="ISO-8859-1">
+    <copy file="res/tomcat.nsi" tofile="${tomcat.dist}/tomcat.nsi" overwrite="true" encoding="UTF-8">
       <filterset refid="version.filters"/>
     </copy>
     <fixcrlf srcdir="${tomcat.dist}" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
   </target>
@@ -2219,7 +2219,7 @@ skip.installer property in build.properties" />
          todir="${tomcat.release}/v${version}"/>
     <copy file="RELEASE-NOTES"
          todir="${tomcat.release}/v${version}"
-         encoding="ISO-8859-1">
+         encoding="UTF-8">
       <filterset refid="version.filters"/>
     </copy>
     <copy file="res/welcome.main.html"
@@ -2261,7 +2261,7 @@ skip.installer property in build.properties" />
   <!-- Packages the core zip distro -->
   <target name="package-zip" depends="dist-static">
     <fixcrlf srcdir="${tomcat.dist}" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
 
@@ -2294,7 +2294,7 @@ skip.installer property in build.properties" />
   <!-- Packages the core windows zip distros -->
   <target name="package-winzip" depends="dist-static">
     <fixcrlf srcdir="${tomcat.dist}" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
 
@@ -2353,11 +2353,11 @@ skip.installer property in build.properties" />
   <!-- Packages the deployer distribution in zip format -->
   <target name="package-deployer-zip">
     <fixcrlf srcdir="${tomcat.dist}" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
     <fixcrlf srcdir="${tomcat.deployer}" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
 
@@ -2375,7 +2375,7 @@ skip.installer property in build.properties" />
   <!-- Packages the core tar.gz distro -->
   <target name="package-tgz" depends="dist-static">
     <fixcrlf srcdir="${tomcat.dist}" eol="lf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
 
@@ -2419,11 +2419,11 @@ skip.installer property in build.properties" />
   <!-- Packages the deployer Tomcat distro in tar.gz format -->
   <target name="package-deployer-tgz">
     <fixcrlf srcdir="${tomcat.dist}" eol="lf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
     <fixcrlf srcdir="${tomcat.deployer}" eol="lf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
 
@@ -2446,7 +2446,7 @@ skip.installer property in build.properties" />
   <!-- Packages the documentation distro in tar.gz format -->
   <target name="package-docs-tgz" depends="dist-static">
     <fixcrlf srcdir="${tomcat.dist}" eol="lf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files" />
     </fixcrlf>
 
@@ -2468,7 +2468,7 @@ skip.installer property in build.properties" />
   <!-- Packages the source code distribution in zip format -->
   <target name="package-src-zip" depends="dist-source">
     <fixcrlf srcdir="${tomcat.dist}/src" eol="crlf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files"/>
       <include name="bin/*.bat" />
       <include name="bin/*.sh" />
@@ -2484,7 +2484,7 @@ skip.installer property in build.properties" />
   <!-- Packages the source code distribution in tar.gz format -->
   <target name="package-src-tgz" depends="dist-source">
     <fixcrlf srcdir="${tomcat.dist}/src" eol="lf"
-        encoding="ISO-8859-1" fixlast="false" >
+        encoding="UTF-8" fixlast="false" >
       <patternset refid="text.files"/>
       <include name="bin/*.bat" />
       <include name="bin/*.sh" />

@@ -77,8 +77,8 @@ public class Response implements HttpServletResponse {
     /**
      * Compliance with SRV.15.2.22.1. A call to Response.getWriter() if no
      * character encoding has been specified will result in subsequent calls to
-     * Response.getCharacterEncoding() returning ISO-8859-1 and the Content-Type
-     * response header will include a charset=ISO-8859-1 component.
+     * Response.getCharacterEncoding() returning UTF-8 and the Content-Type
+     * response header will include a charset=UTF-8 component.
      */
     private static final boolean ENFORCE_ENCODING_IN_GET_WRITER;
 
@@ -585,10 +585,10 @@ public class Response implements HttpServletResponse {
             /*
              * If the response's character encoding has not been specified as
              * described in <code>getCharacterEncoding</code> (i.e., the method
-             * just returns the default value <code>ISO-8859-1</code>),
-             * <code>getWriter</code> updates it to <code>ISO-8859-1</code>
+             * just returns the default value <code>UTF-8</code>),
+             * <code>getWriter</code> updates it to <code>UTF-8</code>
              * (with the effect that a subsequent call to getContentType() will
-             * include a charset=ISO-8859-1 component which will also be
+             * include a charset=UTF-8 component which will also be
              * reflected in the Content-Type response header, thereby satisfying
              * the Servlet spec requirement that containers must communicate the
              * character encoding used for the servlet response's writer to the

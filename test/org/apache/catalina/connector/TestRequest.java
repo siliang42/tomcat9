@@ -911,7 +911,7 @@ public class TestRequest extends TomcatBaseTest {
 
     @Test
     public void testGetReaderValidEncoding() throws Exception {
-        doTestGetReader("ISO-8859-1", true);
+        doTestGetReader("UTF-8", true);
     }
 
 

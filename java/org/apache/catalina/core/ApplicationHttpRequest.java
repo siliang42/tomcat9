@@ -899,7 +899,7 @@ class ApplicationHttpRequest extends HttpServletRequestWrapper {
                 charset = B2CConverter.getCharset(encoding);
                 queryMB.setCharset(charset);
             } catch (UnsupportedEncodingException e) {
-                // Fall-back to default (ISO-8859-1)
+                // Fall-back to default (UTF-8)
                 charset = StandardCharsets.ISO_8859_1;
             }
         }

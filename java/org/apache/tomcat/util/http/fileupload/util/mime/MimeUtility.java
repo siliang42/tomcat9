@@ -70,7 +70,7 @@ public final class MimeUtility {
     static {
         MIME2JAVA.put("ja_jp.iso2022-7", "ISO2022JP");
         MIME2JAVA.put("ja_jp.eucjp", "EUCJIS");
-        MIME2JAVA.put("x-us-ascii", "ISO-8859-1");
+        MIME2JAVA.put("x-us-ascii", "UTF-8");
     }
 
     /**

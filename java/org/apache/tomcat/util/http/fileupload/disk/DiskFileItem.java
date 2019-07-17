@@ -65,9 +65,9 @@ public class DiskFileItem
      * Default content charset to be used when no explicit charset
      * parameter is provided by the sender. Media subtypes of the
      * "text" type are defined to have a default charset value of
-     * "ISO-8859-1" when received via HTTP.
+     * "UTF-8" when received via HTTP.
      */
-    public static final String DEFAULT_CHARSET = "ISO-8859-1";
+    public static final String DEFAULT_CHARSET = "UTF-8";
 
     // ----------------------------------------------------------- Data members
 

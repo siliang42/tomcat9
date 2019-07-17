@@ -53,7 +53,7 @@ public abstract class AbstractCatalinaTask extends BaseRedirectorHelperTask {
     /**
      * The charset used during URL encoding.
      */
-    protected String charset = "ISO-8859-1";
+    protected String charset = "UTF-8";
 
     public String getCharset() {
         return charset;

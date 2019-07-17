@@ -872,7 +872,7 @@ public class WsWebSocketContainer implements WebSocketContainer, BackgroundProce
     }
 
     private String readLine(ByteBuffer response) {
-        // All ISO-8859-1
+        // All UTF-8
         StringBuilder sb = new StringBuilder();
 
         char c = 0;

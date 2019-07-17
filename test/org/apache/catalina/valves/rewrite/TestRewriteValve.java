@@ -265,7 +265,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithBothQsFlagsRNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*)/(.*) /c/\u00A1$1?$2 [R,NE]",
                 "/b/%C2%A1/id=%C2%A1?di=%C2%AE", null);
     }
@@ -275,7 +275,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithBothQsFlagsRBNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*)/(.*) /c/\u00A1$1?$2 [R,B,NE]",
                 "/b/%C2%A1/id=%C2%A1?di=%C2%AE", null);
     }
@@ -312,7 +312,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithBothQsFlagsRNEQSA() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*)/(.*) /c/\u00A1$1?$2 [R,NE,QSA]",
                 "/b/%C2%A1/id=%C2%A1?di=%C2%AE", null);
     }
@@ -322,7 +322,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithBothQsFlagsRBNEQSA() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*)/(.*) /c/\u00A1$1?$2 [R,B,NE,QSA]",
                 "/b/%C2%A1/id=%C2%A1?di=%C2%AE", null);
     }
@@ -364,7 +364,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithOriginalQsFlagsRNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*) /c/\u00A1$1 [R,NE]",
                 "/b/%C2%A1?id=%C2%A1", null);
     }
@@ -374,7 +374,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithOriginalQsFlagsRBNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*) /c/\u00A1$1 [R,B,NE]",
                 "/b/%C2%A1?id=%C2%A1", null);
     }
@@ -425,7 +425,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithRewriteQsFlagsRNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*)/(.*) /c/\u00A1$1?$2 [R,NE]",
                 "/b/%C2%A1/id=%C2%A1", null);
     }
@@ -435,7 +435,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8WithRewriteQsFlagsRBNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*)/(.*) /c/\u00A1$1?$2 [R,B,NE]",
                 "/b/%C2%A1/id=%C2%A1", null);
     }
@@ -482,7 +482,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8FlagsRNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*) /c/\u00A1$1 [R,NE]", "/b/%C2%A1", null);
     }
 
@@ -491,7 +491,7 @@ public class TestRewriteValve extends TomcatBaseTest {
     public void testUtf8FlagsRBNE() throws Exception {
         // Note %C2%A1 == \u00A1
         // Failing to escape the redirect means UTF-8 bytes in the Location
-        // header which will be treated as if they are ISO-8859-1
+        // header which will be treated as if they are UTF-8
         doTestRewrite("RewriteRule ^/b/(.*) /c/\u00A1$1 [R,B,NE]", "/b/%C2%A1", null);
     }
 

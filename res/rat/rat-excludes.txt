@@ -75,7 +75,7 @@ output/dist/src/test/webapp/404.html
 output/dist/src/test/webapp/index.html.br
 output/dist/src/test/webapp/bug49nnn/bug49464-cp1252.txt
 output/dist/src/test/webapp/bug49nnn/bug49464-ibm850.txt
-output/dist/src/test/webapp/bug49nnn/bug49464-iso-8859-1.txt
+output/dist/src/test/webapp/bug49nnn/bug49464-UTF-8.txt
 output/dist/src/test/webapp/bug49nnn/bug49464-utf-8-bom.txt
 output/dist/src/test/webapp/bug49nnn/bug49464-utf-8.txt
 output/dist/src/test/webapp/bug53257/*.txt
@@ -88,7 +88,7 @@ test/webapp/404.html
 test/webapp/index.html.br
 test/webapp/bug49nnn/bug49464-cp1252.txt
 test/webapp/bug49nnn/bug49464-ibm850.txt
-test/webapp/bug49nnn/bug49464-iso-8859-1.txt
+test/webapp/bug49nnn/bug49464-UTF-8.txt
 test/webapp/bug49nnn/bug49464-utf-8-bom.txt
 test/webapp/bug49nnn/bug49464-utf-8.txt
 test/webapp/bug53257/*.txt

@@ -127,7 +127,7 @@ public class TestSendFile extends TomcatBaseTest {
                 throws ServletException, IOException {
 
             resp.setContentType("'application/octet-stream");
-            resp.setCharacterEncoding("ISO-8859-1");
+            resp.setCharacterEncoding("UTF-8");
             resp.setContentLengthLong(f.length());
             if (Boolean.TRUE.equals(req.getAttribute(Globals.SENDFILE_SUPPORTED_ATTR))) {
                 req.setAttribute(Globals.SENDFILE_FILENAME_ATTR, f.getAbsolutePath());
@@ -198,7 +198,7 @@ public class TestSendFile extends TomcatBaseTest {
                 throws ServletException, IOException {
             if (Boolean.valueOf(req.getParameter(Globals.SENDFILE_SUPPORTED_ATTR)).booleanValue()) {
                 resp.setContentType("'application/octet-stream");
-                resp.setCharacterEncoding("ISO-8859-1");
+                resp.setCharacterEncoding("UTF-8");
                 resp.setContentLengthLong(file.length());
                 req.setAttribute(Globals.SENDFILE_FILENAME_ATTR, file.getAbsolutePath());
                 req.setAttribute(Globals.SENDFILE_FILE_START_ATTR, Long.valueOf(0));
